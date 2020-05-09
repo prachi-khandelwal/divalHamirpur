@@ -1,0 +1,236 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block body_block %}
+<head>
+
+    <style>
+      /* our team */
+
+      * {
+        
+        box-sizing: border-box;
+      }
+
+      .column {
+        float: left;
+        width: 25%;
+        padding: 30px;
+      }
+
+      /* Clearfix (clear floats) */
+      .row::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+
+
+
+
+
+/* ++++++++++++++IMAGE NUMBER-1++++++++++ */
+      #parallax{
+        background-image: url("{% static 'images/1qq9.gif' %}");
+
+
+        min-height: 650px;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+
+
+
+/* +++++++++++STYLING FOR BUTTON++++++++++++ */
+.btn_cover {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #fc2c03;
+  color: white;
+  font-size: 25px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+
+/* ++++++++++++++ IMAGE NUMBER-2 (Register) ++++++++++ */
+#parallax2
+{
+  background-image: url("{% static 'images/fyGu.gif' %}");
+  min-height: 700px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* +++++++CUTOUT TEXT+++++++++++ */
+.text {
+  background-color: white;
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0 auto;
+  padding: 15px;
+  width: 50%;
+  text-align: center;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: screen;
+}
+
+
+    </style>
+  </head>
+
+
+
+
+<div id="parallax" class="main">
+  <div class="image-container">
+    <div class="text">Safety starts with “S”, begins with “You”</div>
+  </div>
+  <a href="#parallax2" ><button class="btn_cover">Register Here </button></a>
+  </div>
+  <!-- /* ++++++++++ REGISTRATION FORM STYLING+++++++++++ */ -->
+
+<div id="parallax2" class= "main"><div style="height:600px;">
+  {% if registered %}
+      <h1>Thank you for registering!</h1>
+    {% else %}
+    <div class="container my-5 px-0 z-depth-1">
+  <!--Section: Content-->
+  <section class="p-5 my-md-5 text-center" >
+    <form  enctype="multipart/form-data" method="POST" class="form-controls my-5 mx-md-5" role="form" action="{% url 'dival_app:register' %}">
+
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <!-- Material form login -->
+          <div class="card">
+
+            <!--Card content-->
+            <div class="card-body">
+
+              <!-- Form -->
+              <form class="text-center"  action="#!">
+
+                <h3 class="font-weight-bold my-4 pb-2 dark-grey-text">Register</h3>
+                    <div class="bold-my-labels">
+                      {% csrf_token %}
+                      {{ registrationform }}
+
+                    </div>
+
+              <div class="text-center">
+                  <input type="submit" class="btn btn-danger btn-rounded my-4 waves-effect" value="Register"></input>
+                </div>
+
+              </form>
+              <!-- Form -->
+
+            </div>
+
+          </div>
+          <!-- Material form login -->
+        </div>
+      </div>
+
+    </form>
+
+  </section>
+  <!--Section: Content-->
+
+
+</div>
+</div>
+</div>
+
+
+<!-- ++++++++++++OUR TEAM+++++++++++++ -->
+<div class="container my-">
+  <!--Section: Content-->
+  <section class="team-section text-center dark-grey-text">
+
+    <!-- Section heading -->
+    <h3 class="font-weight-bold pb-2 mb-4">Our amazing team</h3>
+    <!-- Section description -->
+
+    <!-- Grid row -->
+    <div class="row text-center">
+
+      <!-- Grid column -->
+
+      <!-- <div class="row">
+        <div class="column">
+          <div class="avatar mx-auto">
+            <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(10).jpg" class="rounded z-depth-1-half" alt="Sample avatar">
+          </div>
+          <h4 class="font-weight-bold dark-grey-text my-4">PRATIKSHA GOYAL</h4>
+          <h6 class="text-uppercase grey-text mb-3"><strong>XYZ</strong></h6>
+          </div>
+          </div> -->
+
+
+
+          <div class="row">
+            <div class="column">
+              <div class="avatar mx-auto">
+                <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(10).jpg" class="rounded z-depth-1-half" alt="Sample avatar">
+              </div>
+              <h4 class="font-weight-bold dark-grey-text my-4">PRATIKSHA GOYAL</h4>
+
+              </div>
+              </div>
+
+
+              <div class="row">
+                <div class="column">
+                  <div class="avatar mx-auto">
+                    <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(10).jpg" class="rounded z-depth-1-half" alt="Sample avatar">
+                  </div>
+                  <h4 class="font-weight-bold dark-grey-text my-4">RIYA BANSAL</h4>
+
+                  </div>
+                  </div>
+
+
+                  <div class="row">
+                    <div class="column">
+                      <div class="avatar mx-auto">
+                        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(10).jpg" class="rounded z-depth-1-half" alt="Sample avatar">
+                      </div>
+                      <h4 class="font-weight-bold dark-grey-text my-4">ANKIT MITTAL</h4>
+
+                      </div>
+                      </div>
+
+
+                      <div class="row">
+                        <div class="column">
+                          <div class="avatar mx-auto">
+                            <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(10).jpg" class="rounded z-depth-1-half" alt="Sample avatar">
+                          </div>
+                          <h4 class="font-weight-bold dark-grey-text my-4" style="padding:25px;">NISHANT SHARMA</h4>
+                        </div>
+                        </div>
+
+    </div>
+    <!-- Grid row -->
+
+  </section>
+  <!--Section: Content-->
+
+
+</div>
+{% endif %}
+{% endblock %}
